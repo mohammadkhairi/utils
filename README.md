@@ -9,20 +9,20 @@
 ## How To Import
 `` const { BuildResponse } = require('utils') ``
 
-## List of Function
+## List of middlewares
 * BuildResponse
 * HandleRequestUsingAsync
 * RegisterHTTPErrorCodeHandler
 * APIKeyValidator
 
 ### BuildResponse
-This function is used to build a response before  send it back to the caller
+This middleware is used to build a response before  send it back to the caller
 
 ### HandleRequestUsingAsync
-This function is use to handle customs controllers or middlewares developed by the engineers by using asynchronous method. This ensure that the engineers does not create  callback controller or middlware
+This middleware is use to handle customs controllers or middlewares developed by the engineers by using asynchronous method. This ensure that the engineers does not create  callback controller or middlware
 
 ### RegisterHTTPErrorCodeHandler
-The purpose of this function is to assign http error code to the error code thrown by the application
+The purpose of this middleware is to assign http error code to the error code thrown by the application
 
 ### APIKeyValidator
 Validate API Token key sent via the header
