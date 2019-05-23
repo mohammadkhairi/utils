@@ -4,7 +4,7 @@
  To store all the generic feature which can be use through out application or services
 
 ## Installation
-''npm install https://github.com/mohammadkhairi/utils.git''
+``npm install https://github.com/mohammadkhairi/utils.git``
 
 ## How To Import
 `` const { BuildResponse } = require('utils') ``
