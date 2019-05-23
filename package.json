@@ -1,0 +1,23 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/**/**/*.test.js"
+  },
+  "keywords": [],
+  "author": "Mohammad Khairi Bin Ali",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "node-mocks-http": "^1.7.5",
+    "testdouble": "^3.11.0"
+  },
+  "dependencies": {
+    "@hapi/joi": "^15.0.3",
+    "assert-plus": "^1.0.0",
+    "standard-error": "git+https://github.com/mohammadkhairi/standard_error.git"
+  }
+}
