@@ -7,7 +7,7 @@ const httpMock = require('node-mocks-http');
 const HandleRequestUsingAsync = require('./../../src/middlewares/handle_request_using_async');
 
 describe('Handle Request Using Async', function () {
-    let req, dummyFunction;
+    let req, res, dummyFunction;
 
     beforeEach(() => {
         req = httpMock.createRequest({
@@ -16,6 +16,7 @@ describe('Handle Request Using Async', function () {
                 name: 'dasds'
             }
         });
+        res = httpMock.createResponse();
     });
 
     describe('when all the parameter send does match with the resources', function () {
@@ -26,8 +27,6 @@ describe('Handle Request Using Async', function () {
         });
 
         it('will no throw an error', function (done) {
-            const res = httpMock.createResponse();
-
             const handleRequestUsingAsync = HandleRequestUsingAsync(dummyFunction);
             handleRequestUsingAsync(req, res, (err,response) => {
                 expect(err).to.be.null;
@@ -45,8 +44,6 @@ describe('Handle Request Using Async', function () {
         });
 
         it('will no throw an error', function (done) {
-            const res = httpMock.createResponse();
-
             const handleRequestUsingAsync = HandleRequestUsingAsync(dummyFunction);
             handleRequestUsingAsync(req, res, (err) => {
                 expect(err.error_code).equals('DUMMY_ERROR');
