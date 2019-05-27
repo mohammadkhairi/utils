@@ -1,6 +1,6 @@
 'use strict'
 
-function APIKeyValidator(APIKey) {
+const APIKeyValidator = (schema) => {
     return (req, res, next)=>{
         if (req.get('api-key-token') !== APIKey) {
             return res.status(401).send({
