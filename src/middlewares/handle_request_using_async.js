@@ -5,7 +5,7 @@ const HandleRequestUsingAsync = (asyncHandler) => {
         const response = asyncHandler(req);
 
         response.then((response) => {
-            res.locals.response_data = response;
+            res.response_data = response;
             next(null);
         }).catch((err) => {
             return next(err);

@@ -16,14 +16,12 @@ describe('Build Response', function () {
     describe('when all the parameter send does match with the resources', function () {
         it('will no throw an error', function (done) {
             const res = httpMock.createResponse({
-                locals: {
                     response_data: {
                         param: {
                             name: 'test',
                             id: 1
                         }
                     }
-                }
             });
 
             const buildResponse = BuildResponse(dummyResources);

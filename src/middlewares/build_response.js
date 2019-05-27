@@ -9,7 +9,7 @@ const BuildResponse = (schema) => {
     assert.object(schema);
 
     return function (req, res, next) {
-        const responseData = res.locals.response_data;
+        const responseData = res.response_data;
         
         Joi.validate(responseData, schema, function (err, validatedResponseData) {
             if (err) {
