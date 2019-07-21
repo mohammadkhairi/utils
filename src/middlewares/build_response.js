@@ -8,15 +8,15 @@ const StandardError = require('standard-error');
 const BuildResponse = (schema) => {
     assert.object(schema);
 
-    return function (req, res, next) {
+    return async (req, res, next) => {
         const responseData = res.response_data;
-        
-        Joi.validate(responseData, schema, function (err, validatedResponseData) {
-            if (err) {
-                return next(new StandardError('RESPONSE_VALIDATION_ERROR', 'Could not validate response data', err, {}));
-            }
-            res.status(200).json(validatedResponseData);
-        });
+        try {
+            const validatedResponseData = await Joi.validate(responseData, schema);
+            return res.status(200).json(validatedResponseData);
+        }
+        catch (err) {
+            return res.status(500).json(new StandardError('RESPONSE_VALIDATION_ERROR', 'Could not validate response data', err, {}));
+        }
     };
 }
 

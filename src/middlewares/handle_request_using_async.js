@@ -8,7 +8,7 @@ const HandleRequestUsingAsync = (asyncHandler) => {
             res.response_data = response;
             next(null);
         }).catch((err) => {
-            return next(err);
+            return res.status(req.errorCodeMap[err.error_code]).send(err);
         });
     };
 }
